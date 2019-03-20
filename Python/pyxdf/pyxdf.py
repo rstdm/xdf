@@ -285,7 +285,7 @@ def load_xdf(filename,
                             # read the values
                             for ch in range(temp[StreamId].nchns):
                                 raw = f.read(_read_varlen_int(f))
-                                values[k][ch] = raw.decode(errors='replace')
+                                values[k][ch] = raw.decode('utf-8', errors='replace')
                     else:
                         # read a sample comprised of numeric values
                         values = np.zeros((nsamples, temp[StreamId].nchns))
